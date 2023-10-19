@@ -2,11 +2,174 @@
 // font-family: 'Montserrat', sans-serif;
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;700&family=Montserrat:wght@400;500;700&display=swap');
 
-*{
-  font-family: 'Exo 2', sans-serif;
-  font-size: 18px;
+body {
+  font-size: 16px;
 }
-.inner{
+
+.inner {
   margin: 0 80px;
 }
 
+// common
+h1 {
+  font-size: 48px;
+  width: 600px;
+  line-height: 1.5;
+  letter-spacing: -0.72px;
+  // text-align: left;
+  margin-bottom: 70px;
+}
+
+.title {
+  font-family: $font_Mont;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1.5;
+  letter-spacing: -0.36px;
+  margin-bottom: 24px;
+}
+
+.sub {
+  font-family: $font_Mont;
+  font-size: 18px;
+  line-height: 1.67;
+  letter-spacing: -0.27px;
+}
+
+
+// profile
+.porfiles {
+  margin: 120px 0;
+
+  .porfile {
+    display: flex;
+    gap: 20px;
+
+    .porfile_img {
+      width: 108px;
+      height: 108px;
+      border-radius: 54px;
+      margin-bottom: 40px;
+    }
+
+    .more {
+      height: 30px;
+      font-weight: bold;
+      line-height: 1.67;
+      letter-spacing: -0.27px;
+      color: #18a0fb;
+      cursor: pointer;
+      margin-top: 24px;
+    }
+  }
+}
+
+// newsLetter
+.bg {
+  padding: 152px 0;
+  // height: 740px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 0;
+
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+.newsLetter {
+  color: $color_white;
+  text-align: center;
+
+  .sub {
+    margin-bottom: 32px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid rgba($color: $color_white, $alpha: 0.5);
+    opacity: 0.8;
+  }
+
+  .desc {
+    font-family: $font_Mont;
+    font-size: 14px;
+    line-height: 1.57;
+    letter-spacing: -0.21px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 95px;
+  }
+
+  .email_title {
+    margin-bottom: 16px;
+    font-weight: bold;
+    letter-spacing: -0.24px;
+  }
+
+  .email_form {
+    position: relative;
+    align-items: center;
+    margin: 0 auto;
+    width: 500px;
+
+    label {
+      position: absolute;
+      top: -999999px;
+      overflow: hidden;
+    }
+
+    input {
+      width: 500px;
+      height: 50px;
+      padding: 0 15px;
+      backdrop-filter: blur(10px);
+      background-color: rgba(255, 255, 255, 0.1);
+      -webkit-backdrop-filter: blur(10px);
+      border: solid 1px #fff;
+      border-radius: 7px;
+      -moz-border-radius: 5px;
+      -o-border-radius: 5px;
+      outline: none;
+      box-sizing: border-box;
+
+      &.success {
+        border-color: $success
+      }
+
+      &.error {
+        border-color: $error
+      }
+
+      &::placeholder {
+        font-size: 16px;
+        color: #fff;
+      }
+    }
+
+    .text_danger {
+      position: absolute;
+      left: 10px;
+      bottom: -25px;
+      font-weight: 300;
+      letter-spacing: -0.24px;
+      text-align: left;
+      color: $error;
+    }
+
+    .email_icon {
+      height: 32px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      right: 10px;
+      cursor: pointer;
+    }
+  }
+}

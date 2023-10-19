@@ -1,14 +1,44 @@
 const { defineConfig } = require('@vue/cli-service')
-module.exports = defineConfig ({
+module.exports = defineConfig({
   transpileDependencies: true,
-  lintOnSave : false,
+  lintOnSave: false,
   css: {
     loaderOptions: {
-      scss: {
-		additionalData: `
-			@import "@/assets/scss/main.scss";
-      `,
+      sass: {
+        additionalData: `@import "src/assets/scss/_variables";`,
       },
     },
   },
+  // configureWebpack: config => {
+  //   config.module = {
+  //       rules: [
+  //           {
+  //               test: /\.vue$/,
+  //               use: [
+  //                   'vue-loader',
+  //               ],
+  //           },
+  //           {
+  //               test: /\.s?css$/,
+  //               use: [
+  //                   'vue-style-loader',
+  //                   'css-loader',
+  //                   {
+  //                     loader: 'sass-loader',
+  //                     options: {
+  //                       additionalData: '@import "src/assets/scss/main";',
+
+  //                     }
+  //                 }
+  //               ],
+  //           },
+  //           // {
+  //           //   test: /\.(png|jpe?g|gif|webp)$/,
+  //           //   use: [
+  //           //     'file-loader'
+  //           //   ]
+  //           // }
+  //       ]
+  //   };
+  // }
 })

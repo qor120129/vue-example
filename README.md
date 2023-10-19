@@ -1,4 +1,4 @@
-# dfluid
+# vue-example
 
 ## Project setup
 ```
